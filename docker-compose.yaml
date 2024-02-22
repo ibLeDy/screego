@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  screego:
+    image: ghcr.io/screego/server:1.10.3
+    container_name: screego
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /opt/screego/certs:/opt/screego/certs
+      - /opt/screego/.users:/opt/screego/.users
+      - /opt/screego/server.config:/etc/screego/server.config
