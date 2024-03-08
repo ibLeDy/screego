@@ -6,7 +6,8 @@ services:
     container_name: screego
     restart: unless-stopped
     network_mode: host
+    env_file:
+      - .env
     volumes:
-      - /opt/screego/certs:/opt/screego/certs
       - /opt/screego/.users:/opt/screego/.users
       - /opt/screego/server.config:/etc/screego/server.config
